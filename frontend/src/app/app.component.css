@@ -1,0 +1,64 @@
+.helyes {
+  background-color: greenyellow;
+}
+.helytelen {
+  background-color: rgb(221, 93, 93);
+}
+body {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.kerdesDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 238, 255);
+  border: 1px dotted black;
+  margin: 10px;
+  padding: 10px;
+}
+.li:nth-child(2n) {
+  flex-basis: 100%;
+}
+.kerdesDiv h2 {
+  background-color: rgb(163, 76, 163);
+  color: white;
+  width: 100%;
+  display: block;
+  font-size: 20pt;
+  padding: 5px;
+  border-radius: 10px;
+}
+.valaszok {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.valaszok button {
+  min-width: 45%;
+  border: 0.5px dotted black;
+  
+  margin: 2px;
+}

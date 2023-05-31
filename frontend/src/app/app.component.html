@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vizsgafeladat</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h1>Tesztkérdések</h1>
+        <select name="kategoriak" id="kategoriak" (change)="kategValaszt()">
+          <option value="-1">összes</option>
+          <option *ngFor="let kat of this.kategData" value="{{ kat.id }}">
+            {{ kat.kategorianev }}
+          </option>
+        </select>
+
+        <div class="kerdesDiv" *ngFor="let teszt of this.kerdesekToShow">
+          <h2>{{ teszt.kerdes }}</h2>
+          <div class="valaszok">
+            <button
+              class="btn"
+              type="button"
+              id="{{ teszt.id }}-v1"
+              (click)="pontoz(teszt, teszt.v1, 'v1')"
+            >
+              {{ teszt.v1 }}
+            </button>
+            <button
+              class="btn"
+              type="button"
+              id="{{ teszt.id }}-v2"
+              (click)="pontoz(teszt, teszt.v2, 'v2')"
+            >
+              {{ teszt.v2 }}
+            </button>
+            <button
+              class="btn"
+              type="button"
+              id="{{ teszt.id }}-v3"
+              (click)="pontoz(teszt, teszt.v3, 'v3')"
+            >
+              {{ teszt.v3 }}
+            </button>
+            <button
+              class="btn"
+              type="button"
+              id="{{ teszt.id }}-v4"
+              (click)="pontoz(teszt, teszt.v4, 'v4')"
+            >
+              {{ teszt.v4 }}
+            </button>
+          </div>
+        </div>
+
+        <button
+          class="btn btn-default"
+          (click)="this.keszenVan()"
+          *ngIf="this.megvalaszoltKerdesekSzama == this.kerdesekToShow.length"
+        >
+          Kész
+        </button>
+
+        <div class="eredmenyek" *ngIf="this.kesz">
+          A {{ this.megvalaszoltKerdesekSzama }} kérdésből
+          {{ this.pontszam }} darabot talált el.
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
